@@ -1166,62 +1166,22 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
         lineNumber: 21
       },
       __self: this
-    }), __jsx("link", {
-      rel: "icon",
-      type: "image/png",
-      sizes: "512x512",
-      href: "/static/icons/icon-512x512.png",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 26
-      },
-      __self: this
-    }), __jsx("link", {
-      rel: "apple-touch-icon",
-      type: "image/png",
-      sizes: "512x512",
-      href: "/static/icons/icon-512x512.png",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 32
-      },
-      __self: this
-    }), __jsx("link", {
-      rel: "icon",
-      type: "image/png",
-      sizes: "192x192",
-      href: "/static/icons/icon-192x192.png",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 38
-      },
-      __self: this
-    }), __jsx("link", {
-      rel: "apple-touch-icon",
-      type: "image/png",
-      sizes: "192x192",
-      href: "/static/icons/icon-192x192.png",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 44
-      },
-      __self: this
     })), __jsx("body", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51
+        lineNumber: 27
       },
       __self: this
     }, __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Main"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 52
+        lineNumber: 28
       },
       __self: this
     }), __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["NextScript"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 53
+        lineNumber: 29
       },
       __self: this
     })));

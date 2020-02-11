@@ -22,6 +22,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_isLoggedIn__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../lib/isLoggedIn */ "./lib/isLoggedIn.js");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var next_error__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! next/error */ "./node_modules/next/error.js");
+/* harmony import */ var next_error__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(next_error__WEBPACK_IMPORTED_MODULE_7__);
 var _jsxFileName = "/home/admin/Desktop/acamica/client/components/Layout.js";
 
 
@@ -31,133 +33,345 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
+
 function Layout(_ref) {
   var title = _ref.title,
       children = _ref.children,
-      backButton = _ref.backButton;
+      requireLogin = _ref.requireLogin;
   var auth = new _lib_Auth__WEBPACK_IMPORTED_MODULE_4__["default"]();
   var isLogged = Object(_lib_isLoggedIn__WEBPACK_IMPORTED_MODULE_5__["isLoggedIn"])();
-  return __jsx("div", {
-    className: "jsx-33857308" + " " + "root",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11
-    },
-    __self: this
-  }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 12
     },
     __self: this
-  }, __jsx("title", {
-    className: "jsx-33857308",
+  }, requireLogin && !isLogged ? __jsx(next_error__WEBPACK_IMPORTED_MODULE_7___default.a, {
+    statusCode: 401,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 14
     },
     __self: this
-  }, "Acamica Students")), __jsx("header", {
-    className: "jsx-33857308",
+  }) : __jsx("div", {
+    className: "jsx-473655496" + " " + "root",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 16
     },
     __self: this
-  }, backButton && __jsx("span", {
-    onClick: function onClick() {
-      return next_router__WEBPACK_IMPORTED_MODULE_6___default.a.back();
-    },
-    className: "jsx-33857308" + " " + "back-button",
+  }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 17
     },
     __self: this
-  }, "\u2B05"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  }, __jsx("title", {
+    className: "jsx-473655496",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: this
+  }, "Acamica Students")), __jsx("header", {
+    className: "jsx-473655496",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: this
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 22
     },
     __self: this
   }, __jsx("a", {
-    className: "jsx-33857308",
+    className: "jsx-473655496",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 23
     },
     __self: this
   }, "Home")), isLogged && __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
     href: "/payments",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
-    },
-    __self: this
-  }, __jsx("a", {
-    className: "jsx-33857308",
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 26
     },
     __self: this
-  }, "Payments Information")), isLogged && __jsx("li", {
-    className: "jsx-33857308" + " " + "list",
+  }, __jsx("a", {
+    className: "jsx-473655496",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 27
+    },
+    __self: this
+  }, "Payments Information")), isLogged && __jsx("li", {
+    className: "jsx-473655496" + " " + "list",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31
     },
     __self: this
   }, __jsx("a", {
     onClick: function onClick() {
       return auth.logout();
     },
-    className: "jsx-33857308" + " " + "logout",
+    className: "jsx-473655496" + " " + "logout",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 32
     },
     __self: this
   }, "Logout")), !isLogged && __jsx("li", {
-    className: "jsx-33857308" + " " + "list",
+    className: "jsx-473655496" + " " + "list",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 39
     },
     __self: this
   }, __jsx("a", {
     onClick: function onClick() {
       return auth.login();
     },
-    className: "jsx-33857308" + " " + "login",
+    className: "jsx-473655496" + " " + "login",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 40
     },
     __self: this
   }, "Login / Register"))), __jsx("h1", {
-    className: "jsx-33857308",
+    className: "jsx-473655496",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 47
     },
     __self: this
   }, title), children, __jsx("footer", {
-    className: "jsx-33857308",
+    className: "jsx-473655496",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 50
     },
     __self: this
   }, "Acamica \xA9 ", new Date().getFullYear()), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
-    id: "2065262670",
+    id: "3411581128",
     __self: this
-  }, ".root.jsx-33857308{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}header.jsx-33857308{width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:space-around;-webkit-justify-content:space-around;-ms-flex-pack:space-around;justify-content:space-around;padding:1em;font-size:1.2rem;background:#005782;}header.jsx-33857308 a.jsx-33857308{color:darkgrey;-webkit-text-decoration:none;text-decoration:none;}header.jsx-33857308 a.jsx-33857308:hover{font-weight:bold;color:lightgrey;}.login.jsx-33857308,.logout.jsx-33857308{-webkit-text-decoration:none;text-decoration:none;}footer.jsx-33857308{padding:1em;}.list.jsx-33857308{list-style:none;}.back-button.jsx-33857308{font-size:0.9rem;padding-right:1em;cursor:pointer;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2FkbWluL0Rlc2t0b3AvYWNhbWljYS9jbGllbnQvY29tcG9uZW50cy9MYXlvdXQuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBaURrQixBQUd3QixBQU1GLEFBUUksQUFJRSxBQUtJLEFBR1QsQUFHSSxBQUdDLFdBekJKLENBb0JmLEdBWnVCLENBZXZCLENBWGtCLEFBY0UsZ0JBYnBCLEVBY2lCLGVBVmpCLEFBV0EsZUFuQkEsU0FmeUIsV0FPTSx3RkFOVixtQ0FPUCxZQUNLLGlCQUNFLG1CQUNyQixVQVR3Qiw4RUFDeEIiLCJmaWxlIjoiL2hvbWUvYWRtaW4vRGVza3RvcC9hY2FtaWNhL2NsaWVudC9jb21wb25lbnRzL0xheW91dC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBMaW5rIGZyb20gXCJuZXh0L2xpbmtcIjtcbmltcG9ydCBIZWFkIGZyb20gXCJuZXh0L2hlYWRcIjtcbmltcG9ydCBBdXRoIGZyb20gXCIuLi9saWIvQXV0aFwiO1xuaW1wb3J0IHsgaXNMb2dnZWRJbiB9IGZyb20gXCIuLi9saWIvaXNMb2dnZWRJblwiO1xuaW1wb3J0IFJvdXRlciBmcm9tIFwibmV4dC9yb3V0ZXJcIjtcblxuZXhwb3J0IGZ1bmN0aW9uIExheW91dCh7IHRpdGxlLCBjaGlsZHJlbiwgYmFja0J1dHRvbiB9KSB7XG4gIGNvbnN0IGF1dGggPSBuZXcgQXV0aCgpO1xuICBjb25zdCBpc0xvZ2dlZCA9IGlzTG9nZ2VkSW4oKTtcbiAgcmV0dXJuIChcbiAgICA8ZGl2IGNsYXNzTmFtZT1cInJvb3RcIj5cbiAgICAgIDxIZWFkPlxuICAgICAgICA8dGl0bGU+QWNhbWljYSBTdHVkZW50czwvdGl0bGU+XG4gICAgICA8L0hlYWQ+XG4gICAgICA8aGVhZGVyPlxuICAgICAgICB7YmFja0J1dHRvbiAmJiAoXG4gICAgICAgICAgPHNwYW4gb25DbGljaz17KCkgPT4gUm91dGVyLmJhY2soKX0gY2xhc3NOYW1lPVwiYmFjay1idXR0b25cIj5cbiAgICAgICAgICAgICYjeDJiMDU7XG4gICAgICAgICAgPC9zcGFuPlxuICAgICAgICApfVxuICAgICAgICA8TGluayBocmVmPVwiL1wiPlxuICAgICAgICAgIDxhPkhvbWU8L2E+XG4gICAgICAgIDwvTGluaz5cbiAgICAgICAge2lzTG9nZ2VkICYmIChcbiAgICAgICAgICA8TGluayBocmVmPVwiL3BheW1lbnRzXCI+XG4gICAgICAgICAgICA8YT5QYXltZW50cyBJbmZvcm1hdGlvbjwvYT5cbiAgICAgICAgICA8L0xpbms+XG4gICAgICAgICl9XG4gICAgICAgIHtpc0xvZ2dlZCAmJiAoXG4gICAgICAgICAgPGxpIGNsYXNzTmFtZT1cImxpc3RcIj5cbiAgICAgICAgICAgIDxhIGNsYXNzTmFtZT1cImxvZ291dFwiIG9uQ2xpY2s9eygpID0+IGF1dGgubG9nb3V0KCl9PlxuICAgICAgICAgICAgICBMb2dvdXRcbiAgICAgICAgICAgIDwvYT5cbiAgICAgICAgICA8L2xpPlxuICAgICAgICApfVxuXG4gICAgICAgIHshaXNMb2dnZWQgJiYgKFxuICAgICAgICAgIDxsaSBjbGFzc05hbWU9XCJsaXN0XCI+XG4gICAgICAgICAgICA8YSBjbGFzc05hbWU9XCJsb2dpblwiIG9uQ2xpY2s9eygpID0+IGF1dGgubG9naW4oKX0+XG4gICAgICAgICAgICAgIExvZ2luIC8gUmVnaXN0ZXJcbiAgICAgICAgICAgIDwvYT5cbiAgICAgICAgICA8L2xpPlxuICAgICAgICApfVxuICAgICAgPC9oZWFkZXI+XG5cbiAgICAgIDxoMT57dGl0bGV9PC9oMT5cbiAgICAgIHtjaGlsZHJlbn1cblxuICAgICAgPGZvb3Rlcj5BY2FtaWNhICZjb3B5OyB7bmV3IERhdGUoKS5nZXRGdWxsWWVhcigpfTwvZm9vdGVyPlxuICAgICAgPHN0eWxlIGpzeD57YFxuICAgICAgICAucm9vdCB7XG4gICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgIH1cbiAgICAgICAgaGVhZGVyIHtcbiAgICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYXJvdW5kO1xuICAgICAgICAgIHBhZGRpbmc6IDFlbTtcbiAgICAgICAgICBmb250LXNpemU6IDEuMnJlbTtcbiAgICAgICAgICBiYWNrZ3JvdW5kOiAjMDA1NzgyO1xuICAgICAgICB9XG4gICAgICAgIGhlYWRlciBhIHtcbiAgICAgICAgICBjb2xvcjogZGFya2dyZXk7XG4gICAgICAgICAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xuICAgICAgICB9XG4gICAgICAgIGhlYWRlciBhOmhvdmVyIHtcbiAgICAgICAgICBmb250LXdlaWdodDogYm9sZDtcbiAgICAgICAgICBjb2xvcjogbGlnaHRncmV5O1xuICAgICAgICB9XG4gICAgICAgIC5sb2dpbixcbiAgICAgICAgLmxvZ291dCB7XG4gICAgICAgICAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xuICAgICAgICB9XG4gICAgICAgIGZvb3RlciB7XG4gICAgICAgICAgcGFkZGluZzogMWVtO1xuICAgICAgICB9XG4gICAgICAgIC5saXN0IHtcbiAgICAgICAgICBsaXN0LXN0eWxlOiBub25lO1xuICAgICAgICB9XG4gICAgICAgIC5iYWNrLWJ1dHRvbiB7XG4gICAgICAgICAgZm9udC1zaXplOiAwLjlyZW07XG4gICAgICAgICAgcGFkZGluZy1yaWdodDogMWVtO1xuICAgICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgfVxuICAgICAgYH08L3N0eWxlPlxuICAgICAgPHN0eWxlIGdsb2JhbCBqc3g+e2BcbiAgICAgICAgYm9keSB7XG4gICAgICAgICAgbWFyZ2luOiAwO1xuICAgICAgICAgIGZvbnQtc2l6ZTogMTEwJTtcbiAgICAgICAgICBiYWNrZ3JvdW5kOiAjZjBmMGYwO1xuICAgICAgICB9XG4gICAgICBgfTwvc3R5bGU+XG4gICAgPC9kaXY+XG4gICk7XG59XG4iXX0= */\n/*@ sourceURL=/home/admin/Desktop/acamica/client/components/Layout.js */"), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
-    id: "1553850139",
+  }, ".root.jsx-473655496{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}header.jsx-473655496{width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:space-around;-webkit-justify-content:space-around;-ms-flex-pack:space-around;justify-content:space-around;padding:1em;font-size:1.2rem;background:#005782;}header.jsx-473655496 a.jsx-473655496{color:darkgrey;-webkit-text-decoration:none;text-decoration:none;}header.jsx-473655496 a.jsx-473655496:hover{font-weight:bold;color:lightgrey;}.login.jsx-473655496,.logout.jsx-473655496{-webkit-text-decoration:none;text-decoration:none;}footer.jsx-473655496{padding:1em;}.list.jsx-473655496{list-style:none;}.back-button.jsx-473655496{font-size:0.9rem;padding-right:1em;cursor:pointer;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2FkbWluL0Rlc2t0b3AvYWNhbWljYS9jbGllbnQvY29tcG9uZW50cy9MYXlvdXQuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBa0RzQixBQUc0QixBQU1GLEFBUUksQUFJRSxBQUtJLEFBR1QsQUFHSSxBQUdDLFdBekJKLENBb0JmLEdBWnVCLENBZXZCLENBWGtCLEFBY0UsZ0JBYnBCLEVBY2lCLGVBVmpCLEFBV0EsZUFuQkEsU0FmeUIsV0FPTSx3RkFOVixtQ0FPUCxZQUNLLGlCQUNFLG1CQUNyQixVQVR3Qiw4RUFDeEIiLCJmaWxlIjoiL2hvbWUvYWRtaW4vRGVza3RvcC9hY2FtaWNhL2NsaWVudC9jb21wb25lbnRzL0xheW91dC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBMaW5rIGZyb20gXCJuZXh0L2xpbmtcIjtcbmltcG9ydCBIZWFkIGZyb20gXCJuZXh0L2hlYWRcIjtcbmltcG9ydCBBdXRoIGZyb20gXCIuLi9saWIvQXV0aFwiO1xuaW1wb3J0IHsgaXNMb2dnZWRJbiB9IGZyb20gXCIuLi9saWIvaXNMb2dnZWRJblwiO1xuaW1wb3J0IFJvdXRlciBmcm9tIFwibmV4dC9yb3V0ZXJcIjtcbmltcG9ydCBFcnJvciBmcm9tIFwibmV4dC9lcnJvclwiO1xuXG5leHBvcnQgZnVuY3Rpb24gTGF5b3V0KHsgdGl0bGUsIGNoaWxkcmVuLCByZXF1aXJlTG9naW4gfSkge1xuICBjb25zdCBhdXRoID0gbmV3IEF1dGgoKTtcbiAgY29uc3QgaXNMb2dnZWQgPSBpc0xvZ2dlZEluKCk7XG4gIHJldHVybiAoXG4gICAgPFJlYWN0LkZyYWdtZW50PlxuICAgICAge3JlcXVpcmVMb2dpbiAmJiAhaXNMb2dnZWQgPyAoXG4gICAgICAgIDxFcnJvciBzdGF0dXNDb2RlPXs0MDF9IC8+XG4gICAgICApIDogKFxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInJvb3RcIj5cbiAgICAgICAgICA8SGVhZD5cbiAgICAgICAgICAgIDx0aXRsZT5BY2FtaWNhIFN0dWRlbnRzPC90aXRsZT5cbiAgICAgICAgICA8L0hlYWQ+XG4gICAgICAgICAgPGhlYWRlcj5cblxuICAgICAgICAgICAgPExpbmsgaHJlZj1cIi9cIj5cbiAgICAgICAgICAgICAgPGE+SG9tZTwvYT5cbiAgICAgICAgICAgIDwvTGluaz5cbiAgICAgICAgICAgIHtpc0xvZ2dlZCAmJiAoXG4gICAgICAgICAgICAgIDxMaW5rIGhyZWY9XCIvcGF5bWVudHNcIj5cbiAgICAgICAgICAgICAgICA8YT5QYXltZW50cyBJbmZvcm1hdGlvbjwvYT5cbiAgICAgICAgICAgICAgPC9MaW5rPlxuICAgICAgICAgICAgKX1cbiAgICAgICAgICAgIHtpc0xvZ2dlZCAmJiAoXG4gICAgICAgICAgICAgIDxsaSBjbGFzc05hbWU9XCJsaXN0XCI+XG4gICAgICAgICAgICAgICAgPGEgY2xhc3NOYW1lPVwibG9nb3V0XCIgb25DbGljaz17KCkgPT4gYXV0aC5sb2dvdXQoKX0+XG4gICAgICAgICAgICAgICAgICBMb2dvdXRcbiAgICAgICAgICAgICAgICA8L2E+XG4gICAgICAgICAgICAgIDwvbGk+XG4gICAgICAgICAgICApfVxuXG4gICAgICAgICAgICB7IWlzTG9nZ2VkICYmIChcbiAgICAgICAgICAgICAgPGxpIGNsYXNzTmFtZT1cImxpc3RcIj5cbiAgICAgICAgICAgICAgICA8YSBjbGFzc05hbWU9XCJsb2dpblwiIG9uQ2xpY2s9eygpID0+IGF1dGgubG9naW4oKX0+XG4gICAgICAgICAgICAgICAgICBMb2dpbiAvIFJlZ2lzdGVyXG4gICAgICAgICAgICAgICAgPC9hPlxuICAgICAgICAgICAgICA8L2xpPlxuICAgICAgICAgICAgKX1cbiAgICAgICAgICA8L2hlYWRlcj5cblxuICAgICAgICAgIDxoMT57dGl0bGV9PC9oMT5cbiAgICAgICAgICB7Y2hpbGRyZW59XG5cbiAgICAgICAgICA8Zm9vdGVyPkFjYW1pY2EgJmNvcHk7IHtuZXcgRGF0ZSgpLmdldEZ1bGxZZWFyKCl9PC9mb290ZXI+XG4gICAgICAgICAgPHN0eWxlIGpzeD57YFxuICAgICAgICAgICAgLnJvb3Qge1xuICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICAgICAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgICAgICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIGhlYWRlciB7XG4gICAgICAgICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWFyb3VuZDtcbiAgICAgICAgICAgICAgcGFkZGluZzogMWVtO1xuICAgICAgICAgICAgICBmb250LXNpemU6IDEuMnJlbTtcbiAgICAgICAgICAgICAgYmFja2dyb3VuZDogIzAwNTc4MjtcbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIGhlYWRlciBhIHtcbiAgICAgICAgICAgICAgY29sb3I6IGRhcmtncmV5O1xuICAgICAgICAgICAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG4gICAgICAgICAgICB9XG4gICAgICAgICAgICBoZWFkZXIgYTpob3ZlciB7XG4gICAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xuICAgICAgICAgICAgICBjb2xvcjogbGlnaHRncmV5O1xuICAgICAgICAgICAgfVxuICAgICAgICAgICAgLmxvZ2luLFxuICAgICAgICAgICAgLmxvZ291dCB7XG4gICAgICAgICAgICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIGZvb3RlciB7XG4gICAgICAgICAgICAgIHBhZGRpbmc6IDFlbTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIC5saXN0IHtcbiAgICAgICAgICAgICAgbGlzdC1zdHlsZTogbm9uZTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIC5iYWNrLWJ1dHRvbiB7XG4gICAgICAgICAgICAgIGZvbnQtc2l6ZTogMC45cmVtO1xuICAgICAgICAgICAgICBwYWRkaW5nLXJpZ2h0OiAxZW07XG4gICAgICAgICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgICAgIH1cbiAgICAgICAgICBgfTwvc3R5bGU+XG4gICAgICAgICAgPHN0eWxlIGdsb2JhbCBqc3g+e2BcbiAgICAgICAgICAgIGJvZHkge1xuICAgICAgICAgICAgICBtYXJnaW46IDA7XG4gICAgICAgICAgICAgIGZvbnQtc2l6ZTogMTEwJTtcbiAgICAgICAgICAgICAgYmFja2dyb3VuZDogI2YwZjBmMDtcbiAgICAgICAgICAgIH1cbiAgICAgICAgICBgfTwvc3R5bGU+XG4gICAgICAgIDwvZGl2PlxuICAgICAgKX1cbiAgICA8L1JlYWN0LkZyYWdtZW50PlxuICApO1xufVxuIl19 */\n/*@ sourceURL=/home/admin/Desktop/acamica/client/components/Layout.js */"), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
+    id: "97674249",
     __self: this
-  }, "body{margin:0;font-size:110%;background:#f0f0f0;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2FkbWluL0Rlc2t0b3AvYWNhbWljYS9jbGllbnQvY29tcG9uZW50cy9MYXlvdXQuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBd0Z5QixBQUdvQixTQUNNLGVBQ0ksbUJBQ3JCIiwiZmlsZSI6Ii9ob21lL2FkbWluL0Rlc2t0b3AvYWNhbWljYS9jbGllbnQvY29tcG9uZW50cy9MYXlvdXQuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgTGluayBmcm9tIFwibmV4dC9saW5rXCI7XG5pbXBvcnQgSGVhZCBmcm9tIFwibmV4dC9oZWFkXCI7XG5pbXBvcnQgQXV0aCBmcm9tIFwiLi4vbGliL0F1dGhcIjtcbmltcG9ydCB7IGlzTG9nZ2VkSW4gfSBmcm9tIFwiLi4vbGliL2lzTG9nZ2VkSW5cIjtcbmltcG9ydCBSb3V0ZXIgZnJvbSBcIm5leHQvcm91dGVyXCI7XG5cbmV4cG9ydCBmdW5jdGlvbiBMYXlvdXQoeyB0aXRsZSwgY2hpbGRyZW4sIGJhY2tCdXR0b24gfSkge1xuICBjb25zdCBhdXRoID0gbmV3IEF1dGgoKTtcbiAgY29uc3QgaXNMb2dnZWQgPSBpc0xvZ2dlZEluKCk7XG4gIHJldHVybiAoXG4gICAgPGRpdiBjbGFzc05hbWU9XCJyb290XCI+XG4gICAgICA8SGVhZD5cbiAgICAgICAgPHRpdGxlPkFjYW1pY2EgU3R1ZGVudHM8L3RpdGxlPlxuICAgICAgPC9IZWFkPlxuICAgICAgPGhlYWRlcj5cbiAgICAgICAge2JhY2tCdXR0b24gJiYgKFxuICAgICAgICAgIDxzcGFuIG9uQ2xpY2s9eygpID0+IFJvdXRlci5iYWNrKCl9IGNsYXNzTmFtZT1cImJhY2stYnV0dG9uXCI+XG4gICAgICAgICAgICAmI3gyYjA1O1xuICAgICAgICAgIDwvc3Bhbj5cbiAgICAgICAgKX1cbiAgICAgICAgPExpbmsgaHJlZj1cIi9cIj5cbiAgICAgICAgICA8YT5Ib21lPC9hPlxuICAgICAgICA8L0xpbms+XG4gICAgICAgIHtpc0xvZ2dlZCAmJiAoXG4gICAgICAgICAgPExpbmsgaHJlZj1cIi9wYXltZW50c1wiPlxuICAgICAgICAgICAgPGE+UGF5bWVudHMgSW5mb3JtYXRpb248L2E+XG4gICAgICAgICAgPC9MaW5rPlxuICAgICAgICApfVxuICAgICAgICB7aXNMb2dnZWQgJiYgKFxuICAgICAgICAgIDxsaSBjbGFzc05hbWU9XCJsaXN0XCI+XG4gICAgICAgICAgICA8YSBjbGFzc05hbWU9XCJsb2dvdXRcIiBvbkNsaWNrPXsoKSA9PiBhdXRoLmxvZ291dCgpfT5cbiAgICAgICAgICAgICAgTG9nb3V0XG4gICAgICAgICAgICA8L2E+XG4gICAgICAgICAgPC9saT5cbiAgICAgICAgKX1cblxuICAgICAgICB7IWlzTG9nZ2VkICYmIChcbiAgICAgICAgICA8bGkgY2xhc3NOYW1lPVwibGlzdFwiPlxuICAgICAgICAgICAgPGEgY2xhc3NOYW1lPVwibG9naW5cIiBvbkNsaWNrPXsoKSA9PiBhdXRoLmxvZ2luKCl9PlxuICAgICAgICAgICAgICBMb2dpbiAvIFJlZ2lzdGVyXG4gICAgICAgICAgICA8L2E+XG4gICAgICAgICAgPC9saT5cbiAgICAgICAgKX1cbiAgICAgIDwvaGVhZGVyPlxuXG4gICAgICA8aDE+e3RpdGxlfTwvaDE+XG4gICAgICB7Y2hpbGRyZW59XG5cbiAgICAgIDxmb290ZXI+QWNhbWljYSAmY29weTsge25ldyBEYXRlKCkuZ2V0RnVsbFllYXIoKX08L2Zvb3Rlcj5cbiAgICAgIDxzdHlsZSBqc3g+e2BcbiAgICAgICAgLnJvb3Qge1xuICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgICAgICB9XG4gICAgICAgIGhlYWRlciB7XG4gICAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWFyb3VuZDtcbiAgICAgICAgICBwYWRkaW5nOiAxZW07XG4gICAgICAgICAgZm9udC1zaXplOiAxLjJyZW07XG4gICAgICAgICAgYmFja2dyb3VuZDogIzAwNTc4MjtcbiAgICAgICAgfVxuICAgICAgICBoZWFkZXIgYSB7XG4gICAgICAgICAgY29sb3I6IGRhcmtncmV5O1xuICAgICAgICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbiAgICAgICAgfVxuICAgICAgICBoZWFkZXIgYTpob3ZlciB7XG4gICAgICAgICAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gICAgICAgICAgY29sb3I6IGxpZ2h0Z3JleTtcbiAgICAgICAgfVxuICAgICAgICAubG9naW4sXG4gICAgICAgIC5sb2dvdXQge1xuICAgICAgICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbiAgICAgICAgfVxuICAgICAgICBmb290ZXIge1xuICAgICAgICAgIHBhZGRpbmc6IDFlbTtcbiAgICAgICAgfVxuICAgICAgICAubGlzdCB7XG4gICAgICAgICAgbGlzdC1zdHlsZTogbm9uZTtcbiAgICAgICAgfVxuICAgICAgICAuYmFjay1idXR0b24ge1xuICAgICAgICAgIGZvbnQtc2l6ZTogMC45cmVtO1xuICAgICAgICAgIHBhZGRpbmctcmlnaHQ6IDFlbTtcbiAgICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgICAgIH1cbiAgICAgIGB9PC9zdHlsZT5cbiAgICAgIDxzdHlsZSBnbG9iYWwganN4PntgXG4gICAgICAgIGJvZHkge1xuICAgICAgICAgIG1hcmdpbjogMDtcbiAgICAgICAgICBmb250LXNpemU6IDExMCU7XG4gICAgICAgICAgYmFja2dyb3VuZDogI2YwZjBmMDtcbiAgICAgICAgfVxuICAgICAgYH08L3N0eWxlPlxuICAgIDwvZGl2PlxuICApO1xufVxuIl19 */\n/*@ sourceURL=/home/admin/Desktop/acamica/client/components/Layout.js */"));
+  }, "body{margin:0;font-size:110%;background:#f0f0f0;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2FkbWluL0Rlc2t0b3AvYWNhbWljYS9jbGllbnQvY29tcG9uZW50cy9MYXlvdXQuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBeUY2QixBQUd3QixTQUNNLGVBQ0ksbUJBQ3JCIiwiZmlsZSI6Ii9ob21lL2FkbWluL0Rlc2t0b3AvYWNhbWljYS9jbGllbnQvY29tcG9uZW50cy9MYXlvdXQuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgTGluayBmcm9tIFwibmV4dC9saW5rXCI7XG5pbXBvcnQgSGVhZCBmcm9tIFwibmV4dC9oZWFkXCI7XG5pbXBvcnQgQXV0aCBmcm9tIFwiLi4vbGliL0F1dGhcIjtcbmltcG9ydCB7IGlzTG9nZ2VkSW4gfSBmcm9tIFwiLi4vbGliL2lzTG9nZ2VkSW5cIjtcbmltcG9ydCBSb3V0ZXIgZnJvbSBcIm5leHQvcm91dGVyXCI7XG5pbXBvcnQgRXJyb3IgZnJvbSBcIm5leHQvZXJyb3JcIjtcblxuZXhwb3J0IGZ1bmN0aW9uIExheW91dCh7IHRpdGxlLCBjaGlsZHJlbiwgcmVxdWlyZUxvZ2luIH0pIHtcbiAgY29uc3QgYXV0aCA9IG5ldyBBdXRoKCk7XG4gIGNvbnN0IGlzTG9nZ2VkID0gaXNMb2dnZWRJbigpO1xuICByZXR1cm4gKFxuICAgIDxSZWFjdC5GcmFnbWVudD5cbiAgICAgIHtyZXF1aXJlTG9naW4gJiYgIWlzTG9nZ2VkID8gKFxuICAgICAgICA8RXJyb3Igc3RhdHVzQ29kZT17NDAxfSAvPlxuICAgICAgKSA6IChcbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJyb290XCI+XG4gICAgICAgICAgPEhlYWQ+XG4gICAgICAgICAgICA8dGl0bGU+QWNhbWljYSBTdHVkZW50czwvdGl0bGU+XG4gICAgICAgICAgPC9IZWFkPlxuICAgICAgICAgIDxoZWFkZXI+XG5cbiAgICAgICAgICAgIDxMaW5rIGhyZWY9XCIvXCI+XG4gICAgICAgICAgICAgIDxhPkhvbWU8L2E+XG4gICAgICAgICAgICA8L0xpbms+XG4gICAgICAgICAgICB7aXNMb2dnZWQgJiYgKFxuICAgICAgICAgICAgICA8TGluayBocmVmPVwiL3BheW1lbnRzXCI+XG4gICAgICAgICAgICAgICAgPGE+UGF5bWVudHMgSW5mb3JtYXRpb248L2E+XG4gICAgICAgICAgICAgIDwvTGluaz5cbiAgICAgICAgICAgICl9XG4gICAgICAgICAgICB7aXNMb2dnZWQgJiYgKFxuICAgICAgICAgICAgICA8bGkgY2xhc3NOYW1lPVwibGlzdFwiPlxuICAgICAgICAgICAgICAgIDxhIGNsYXNzTmFtZT1cImxvZ291dFwiIG9uQ2xpY2s9eygpID0+IGF1dGgubG9nb3V0KCl9PlxuICAgICAgICAgICAgICAgICAgTG9nb3V0XG4gICAgICAgICAgICAgICAgPC9hPlxuICAgICAgICAgICAgICA8L2xpPlxuICAgICAgICAgICAgKX1cblxuICAgICAgICAgICAgeyFpc0xvZ2dlZCAmJiAoXG4gICAgICAgICAgICAgIDxsaSBjbGFzc05hbWU9XCJsaXN0XCI+XG4gICAgICAgICAgICAgICAgPGEgY2xhc3NOYW1lPVwibG9naW5cIiBvbkNsaWNrPXsoKSA9PiBhdXRoLmxvZ2luKCl9PlxuICAgICAgICAgICAgICAgICAgTG9naW4gLyBSZWdpc3RlclxuICAgICAgICAgICAgICAgIDwvYT5cbiAgICAgICAgICAgICAgPC9saT5cbiAgICAgICAgICAgICl9XG4gICAgICAgICAgPC9oZWFkZXI+XG5cbiAgICAgICAgICA8aDE+e3RpdGxlfTwvaDE+XG4gICAgICAgICAge2NoaWxkcmVufVxuXG4gICAgICAgICAgPGZvb3Rlcj5BY2FtaWNhICZjb3B5OyB7bmV3IERhdGUoKS5nZXRGdWxsWWVhcigpfTwvZm9vdGVyPlxuICAgICAgICAgIDxzdHlsZSBqc3g+e2BcbiAgICAgICAgICAgIC5yb290IHtcbiAgICAgICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgICAgICB9XG4gICAgICAgICAgICBoZWFkZXIge1xuICAgICAgICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICAgICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1hcm91bmQ7XG4gICAgICAgICAgICAgIHBhZGRpbmc6IDFlbTtcbiAgICAgICAgICAgICAgZm9udC1zaXplOiAxLjJyZW07XG4gICAgICAgICAgICAgIGJhY2tncm91bmQ6ICMwMDU3ODI7XG4gICAgICAgICAgICB9XG4gICAgICAgICAgICBoZWFkZXIgYSB7XG4gICAgICAgICAgICAgIGNvbG9yOiBkYXJrZ3JleTtcbiAgICAgICAgICAgICAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xuICAgICAgICAgICAgfVxuICAgICAgICAgICAgaGVhZGVyIGE6aG92ZXIge1xuICAgICAgICAgICAgICBmb250LXdlaWdodDogYm9sZDtcbiAgICAgICAgICAgICAgY29sb3I6IGxpZ2h0Z3JleTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIC5sb2dpbixcbiAgICAgICAgICAgIC5sb2dvdXQge1xuICAgICAgICAgICAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG4gICAgICAgICAgICB9XG4gICAgICAgICAgICBmb290ZXIge1xuICAgICAgICAgICAgICBwYWRkaW5nOiAxZW07XG4gICAgICAgICAgICB9XG4gICAgICAgICAgICAubGlzdCB7XG4gICAgICAgICAgICAgIGxpc3Qtc3R5bGU6IG5vbmU7XG4gICAgICAgICAgICB9XG4gICAgICAgICAgICAuYmFjay1idXR0b24ge1xuICAgICAgICAgICAgICBmb250LXNpemU6IDAuOXJlbTtcbiAgICAgICAgICAgICAgcGFkZGluZy1yaWdodDogMWVtO1xuICAgICAgICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgICAgICAgICB9XG4gICAgICAgICAgYH08L3N0eWxlPlxuICAgICAgICAgIDxzdHlsZSBnbG9iYWwganN4PntgXG4gICAgICAgICAgICBib2R5IHtcbiAgICAgICAgICAgICAgbWFyZ2luOiAwO1xuICAgICAgICAgICAgICBmb250LXNpemU6IDExMCU7XG4gICAgICAgICAgICAgIGJhY2tncm91bmQ6ICNmMGYwZjA7XG4gICAgICAgICAgICB9XG4gICAgICAgICAgYH08L3N0eWxlPlxuICAgICAgICA8L2Rpdj5cbiAgICAgICl9XG4gICAgPC9SZWFjdC5GcmFnbWVudD5cbiAgKTtcbn1cbiJdfQ== */\n/*@ sourceURL=/home/admin/Desktop/acamica/client/components/Layout.js */")));
 }
+
+/***/ }),
+
+/***/ "./lib/Api.js":
+/*!********************!*\
+  !*** ./lib/Api.js ***!
+  \********************/
+/*! exports provided: citiesApi, countriesApi, careersApi, studentsApi, studentIdApi, paymentsApi, paymentIdApi, paymentsTypesApi, paymentsDuesApi */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "citiesApi", function() { return citiesApi; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "countriesApi", function() { return countriesApi; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "careersApi", function() { return careersApi; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "studentsApi", function() { return studentsApi; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "studentIdApi", function() { return studentIdApi; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "paymentsApi", function() { return paymentsApi; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "paymentIdApi", function() { return paymentIdApi; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "paymentsTypesApi", function() { return paymentsTypesApi; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "paymentsDuesApi", function() { return paymentsDuesApi; });
+/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
+/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+
+
+var url = "http://0.0.0.0:8000";
+var citiesApi = function citiesApi() {
+  var res;
+  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function citiesApi$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          _context.next = 2;
+          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(url + "/api/cities/"));
+
+        case 2:
+          res = _context.sent;
+          return _context.abrupt("return", res.data);
+
+        case 4:
+        case "end":
+          return _context.stop();
+      }
+    }
+  });
+};
+var countriesApi = function countriesApi() {
+  var res;
+  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function countriesApi$(_context2) {
+    while (1) {
+      switch (_context2.prev = _context2.next) {
+        case 0:
+          _context2.next = 2;
+          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("http://0.0.0.0:8000/api/countries/"));
+
+        case 2:
+          res = _context2.sent;
+          return _context2.abrupt("return", res.data);
+
+        case 4:
+        case "end":
+          return _context2.stop();
+      }
+    }
+  });
+};
+var careersApi = function careersApi() {
+  var res;
+  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function careersApi$(_context3) {
+    while (1) {
+      switch (_context3.prev = _context3.next) {
+        case 0:
+          _context3.next = 2;
+          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("http://0.0.0.0:8000/api/careers/"));
+
+        case 2:
+          res = _context3.sent;
+          return _context3.abrupt("return", res.data);
+
+        case 4:
+        case "end":
+          return _context3.stop();
+      }
+    }
+  });
+};
+var studentsApi = function studentsApi() {
+  var res;
+  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function studentsApi$(_context4) {
+    while (1) {
+      switch (_context4.prev = _context4.next) {
+        case 0:
+          _context4.next = 2;
+          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("http://0.0.0.0:8000/api/students/"));
+
+        case 2:
+          res = _context4.sent;
+          return _context4.abrupt("return", res.data);
+
+        case 4:
+        case "end":
+          return _context4.stop();
+      }
+    }
+  });
+};
+var studentIdApi = function studentIdApi(id) {
+  var res;
+  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function studentIdApi$(_context5) {
+    while (1) {
+      switch (_context5.prev = _context5.next) {
+        case 0:
+          _context5.next = 2;
+          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("http://0.0.0.0:8000/api/students//".concat(id)));
+
+        case 2:
+          res = _context5.sent;
+          return _context5.abrupt("return", res.data);
+
+        case 4:
+        case "end":
+          return _context5.stop();
+      }
+    }
+  });
+};
+var paymentsApi = function paymentsApi() {
+  var res;
+  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function paymentsApi$(_context6) {
+    while (1) {
+      switch (_context6.prev = _context6.next) {
+        case 0:
+          _context6.next = 2;
+          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("http://0.0.0.0:8000/api/payments/"));
+
+        case 2:
+          res = _context6.sent;
+          return _context6.abrupt("return", res.data);
+
+        case 4:
+        case "end":
+          return _context6.stop();
+      }
+    }
+  });
+};
+var paymentIdApi = function paymentIdApi(id) {
+  var res;
+  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function paymentIdApi$(_context7) {
+    while (1) {
+      switch (_context7.prev = _context7.next) {
+        case 0:
+          _context7.next = 2;
+          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("http://0.0.0.0:8000/api/payments/".concat(id)));
+
+        case 2:
+          res = _context7.sent;
+          return _context7.abrupt("return", res.data);
+
+        case 4:
+        case "end":
+          return _context7.stop();
+      }
+    }
+  });
+};
+var paymentsTypesApi = function paymentsTypesApi() {
+  var res;
+  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function paymentsTypesApi$(_context8) {
+    while (1) {
+      switch (_context8.prev = _context8.next) {
+        case 0:
+          _context8.next = 2;
+          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("http://0.0.0.0:8000/api/payments/types"));
+
+        case 2:
+          res = _context8.sent;
+          return _context8.abrupt("return", res.data);
+
+        case 4:
+        case "end":
+          return _context8.stop();
+      }
+    }
+  });
+};
+var paymentsDuesApi = function paymentsDuesApi() {
+  var res;
+  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function paymentsDuesApi$(_context9) {
+    while (1) {
+      switch (_context9.prev = _context9.next) {
+        case 0:
+          _context9.next = 2;
+          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("http://0.0.0.0:8000/api/payments/dues"));
+
+        case 2:
+          res = _context9.sent;
+          return _context9.abrupt("return", res.data);
+
+        case 4:
+        case "end":
+          return _context9.stop();
+      }
+    }
+  });
+};
 
 /***/ }),
 
@@ -342,101 +556,6 @@ function () {
 
 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/process/browser.js */ "./node_modules/process/browser.js")))
-
-/***/ }),
-
-/***/ "./lib/api.js":
-/*!********************!*\
-  !*** ./lib/api.js ***!
-  \********************/
-/*! exports provided: paymentStudent, resCareer */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "paymentStudent", function() { return paymentStudent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "resCareer", function() { return resCareer; });
-/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
-/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-
-
-/* Get data of Payment with Payment  data and student data */
-
-var paymentStudent = function paymentStudent(paymentId) {
-  var _ref, payment, studentPayment;
-
-  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function paymentStudent$(_context) {
-    while (1) {
-      switch (_context.prev = _context.next) {
-        case 0:
-          _context.next = 2;
-          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("http://0.0.0.0:8000/api/payments/".concat(paymentId)).then(function (res) {
-            return {
-              payment: res.data
-            };
-          }));
-
-        case 2:
-          _ref = _context.sent;
-          payment = _ref.payment;
-          _context.next = 6;
-          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("http://0.0.0.0:8000/api/students/".concat(payment.student)).then(function (res) {
-            var student = res.data;
-            return {
-              name: student.name,
-              email: student.email,
-              career: student.career_description,
-              dateBirth: student.date_birth,
-              phone: student.phone_number,
-              country: student.country_description,
-              city: student.city_description,
-              paymentType: payment.paymentDescription,
-              dues: payment.dues
-            };
-          }));
-
-        case 6:
-          studentPayment = _context.sent;
-          return _context.abrupt("return", studentPayment);
-
-        case 8:
-        case "end":
-          return _context.stop();
-      }
-    }
-  });
-};
-var resCareer = function resCareer() {
-  var _ref2, data, careers;
-
-  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function resCareer$(_context2) {
-    while (1) {
-      switch (_context2.prev = _context2.next) {
-        case 0:
-          _context2.next = 2;
-          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("http://0.0.0.0:8000/api/students/careers/"));
-
-        case 2:
-          _ref2 = _context2.sent;
-          data = _ref2.data;
-          _context2.next = 6;
-          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(data);
-
-        case 6:
-          careers = _context2.sent;
-          return _context2.abrupt("return", {
-            careers: careers
-          });
-
-        case 8:
-        case "end":
-          return _context2.stop();
-      }
-    }
-  });
-};
 
 /***/ }),
 
@@ -30024,17 +30143,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/Layout */ "./components/Layout.js");
-/* harmony import */ var _lib_isLoggedIn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../lib/isLoggedIn */ "./lib/isLoggedIn.js");
-/* harmony import */ var next_error__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/error */ "./node_modules/next/error.js");
-/* harmony import */ var next_error__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_error__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _lib_api__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../lib/api */ "./lib/api.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var react_hook_form__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-hook-form */ "./node_modules/react-hook-form/dist/react-hook-form.es.js");
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/Layout */ "./components/Layout.js");
+/* harmony import */ var react_hook_form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-hook-form */ "./node_modules/react-hook-form/dist/react-hook-form.es.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _lib_Api__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../lib/Api */ "./lib/Api.js");
 
 var _jsxFileName = "/home/admin/Desktop/acamica/client/pages/payment/[id].js";
 
@@ -30045,40 +30159,72 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
-
-
-
-var Payment = function Payment(props) {
-  var _useForm = Object(react_hook_form__WEBPACK_IMPORTED_MODULE_8__["useForm"])(),
+var EditPayment = function EditPayment(props) {
+  var _useForm = Object(react_hook_form__WEBPACK_IMPORTED_MODULE_3__["useForm"])(),
       handleSubmit = _useForm.handleSubmit,
       register = _useForm.register;
 
   var countries = props.countries,
       careers = props.careers,
       cities = props.cities,
-      paymentTypes = props.paymentTypes;
+      paymentTypes = props.paymentTypes,
+      id = props.id,
+      payment = props.payment,
+      student = props.student,
+      duesOptions = props.duesOptions;
 
   var onSubmit = function onSubmit(values) {
-    console.log("submit");
+    var studentEdited, paymentEdited;
+    return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function onSubmit$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.prev = 0;
+            studentEdited = {
+              career: values.career,
+              city: values.city,
+              country: values.country,
+              date_birth: values.dateBirth,
+              email: values.email,
+              name: values.name,
+              phone_number: values.phone
+            };
+            paymentEdited = {
+              payment_type: values.paymentType,
+              dues: values.dues,
+              student: student.id
+            };
+            _context.next = 5;
+            return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios.put("http://0.0.0.0:8000/api/students/".concat(student.id), studentEdited));
+
+          case 5:
+            _context.next = 7;
+            return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios.put("http://0.0.0.0:8000/api/payments/".concat(payment.id), paymentEdited));
+
+          case 7:
+            next_router__WEBPACK_IMPORTED_MODULE_5___default.a.push("/payments");
+            _context.next = 13;
+            break;
+
+          case 10:
+            _context.prev = 10;
+            _context.t0 = _context["catch"](0);
+            console.log(_context.t0);
+
+          case 13:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, null, null, [[0, 10]]);
   };
 
-  var router = Object(next_router__WEBPACK_IMPORTED_MODULE_2__["useRouter"])();
-
-  if (router.query.id) {
-    console.log(Object(_lib_api__WEBPACK_IMPORTED_MODULE_6__["paymentStudent"])(router.query.id));
-  }
-
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, {
+  return __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["Layout"], {
+    title: "Payment Nro  ".concat(id),
+    requireLogin: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
-    },
-    __self: this
-  }, Object(_lib_isLoggedIn__WEBPACK_IMPORTED_MODULE_4__["isLoggedIn"])() && router.query.id ? __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_3__["Layout"], {
-    title: "Payment Id: ".concat(router.query.id),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 59
     },
     __self: this
   }, __jsx("form", {
@@ -30086,96 +30232,145 @@ var Payment = function Payment(props) {
     className: "row formFilter",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 60
     },
     __self: this
   }, __jsx("div", {
     className: "form-group  col-md-5",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 62
     },
     __self: this
   }, __jsx("label", {
     htmlFor: "name",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 63
     },
     __self: this
   }, "Name"), __jsx("input", {
     name: "name",
     className: "form-control",
     type: "text",
+    defaultValue: student.name,
     ref: register,
+    required: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 64
     },
     __self: this
   })), __jsx("div", {
     className: "form-group  col-md-5",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 74
     },
     __self: this
   }, __jsx("label", {
     htmlFor: "name",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 75
+    },
+    __self: this
+  }, "Phone number"), __jsx("input", {
+    name: "phone",
+    className: "form-control",
+    type: "text",
+    defaultValue: student.phone_number,
+    ref: register,
+    required: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 76
+    },
+    __self: this
+  })), __jsx("div", {
+    className: "form-group  col-md-5",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 86
+    },
+    __self: this
+  }, __jsx("label", {
+    htmlFor: "email",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 87
     },
     __self: this
   }, "Email"), __jsx("input", {
     name: "email",
     className: "form-control",
-    type: "text",
+    type: "email",
+    defaultValue: student.email,
     ref: register,
+    required: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 88
+    },
+    __self: this
+  })), __jsx("div", {
+    className: "form-group col-md-5",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 98
+    },
+    __self: this
+  }, __jsx("label", {
+    htmlFor: "dateBirth",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 99
+    },
+    __self: this
+  }, "Date of Birth"), __jsx("input", {
+    type: "date",
+    id: "start",
+    name: "dateBirth",
+    ref: register,
+    required: true,
+    defaultValue: student.date_birth,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 100
     },
     __self: this
   })), __jsx("div", {
     className: "form-group",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 109
     },
     __self: this
   }, __jsx("label", {
     htmlFor: "career",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 110
     },
     __self: this
   }, "Career"), __jsx("select", {
     className: "form-control",
     name: "career",
+    defaultValue: student.career,
     multiple: false,
     ref: register,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 111
     },
     __self: this
-  }, __jsx("option", {
-    value: "All",
-    key: -99,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 55
-    },
-    __self: this
-  }, "All"), careers.map(function (career) {
+  }, careers.map(function (career) {
     return __jsx("option", {
-      value: career.description,
+      value: career.id,
       key: career.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 59
+        lineNumber: 119
       },
       __self: this
     }, career.description);
@@ -30183,41 +30378,34 @@ var Payment = function Payment(props) {
     className: "form-group",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 125
     },
     __self: this
   }, __jsx("label", {
     htmlFor: "country",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 126
     },
     __self: this
   }, "Country"), __jsx("select", {
     className: "form-control",
     name: "country",
+    defaultValue: student.country,
     multiple: false,
     ref: register,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 127
     },
     __self: this
-  }, __jsx("option", {
-    value: "All",
-    key: -99,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 73
-    },
-    __self: this
-  }, "All"), countries.map(function (country) {
+  }, countries.map(function (country) {
     return __jsx("option", {
-      value: country.description,
+      value: country.id,
       key: country.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 77
+        lineNumber: 135
       },
       __self: this
     }, country.description);
@@ -30225,41 +30413,34 @@ var Payment = function Payment(props) {
     className: "form-group",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83
+      lineNumber: 141
     },
     __self: this
   }, __jsx("label", {
     htmlFor: "city",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84
+      lineNumber: 142
     },
     __self: this
   }, "City"), __jsx("select", {
     className: "form-control",
     name: "city",
     multiple: false,
+    defaultValue: student.city,
     ref: register,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85
+      lineNumber: 143
     },
     __self: this
-  }, __jsx("option", {
-    value: "All",
-    key: -99,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 91
-    },
-    __self: this
-  }, "All"), cities.map(function (city) {
+  }, cities.map(function (city) {
     return __jsx("option", {
-      value: city.description,
+      value: city.id,
       key: city.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 95
+        lineNumber: 151
       },
       __self: this
     }, city.description);
@@ -30267,128 +30448,159 @@ var Payment = function Payment(props) {
     className: "form-group",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 157
     },
     __self: this
   }, __jsx("label", {
     htmlFor: "country",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102
+      lineNumber: 158
     },
     __self: this
   }, "Payment Type"), __jsx("select", {
     className: "form-control",
     name: "paymentType",
     multiple: false,
+    defaultValue: payment.payment_type,
     ref: register,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103
+      lineNumber: 159
     },
     __self: this
-  }, __jsx("option", {
-    value: "All",
-    key: -99,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 109
-    },
-    __self: this
-  }, "All"), paymentTypes.map(function (payment) {
+  }, paymentTypes.map(function (payment) {
     return __jsx("option", {
-      value: payment.description,
+      value: payment.id,
       key: payment.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 113
+        lineNumber: 167
       },
       __self: this
     }, payment.description);
-  }))), __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__["Button"], {
+  }))), __jsx("div", {
+    className: "form-group",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 173
+    },
+    __self: this
+  }, __jsx("label", {
+    htmlFor: "dues",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 174
+    },
+    __self: this
+  }, "Dues"), __jsx("select", {
+    className: "form-control",
+    name: "dues",
+    multiple: false,
+    ref: register,
+    defaultValue: payment.dues,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 175
+    },
+    __self: this
+  }, duesOptions.sort().map(function (dueOption) {
+    return __jsx("option", {
+      value: dueOption.id,
+      key: dueOption.id,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 183
+      },
+      __self: this
+    }, dueOption.value);
+  }))), __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Button"], {
     type: "submit",
     className: "col-sm-2 col-lg-5 submitButtonFilter btn-text",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 119
+      lineNumber: 189
     },
     __self: this
-  }, "Edit payment"))) : __jsx(next_error__WEBPACK_IMPORTED_MODULE_5___default.a, {
-    statusCode: 403,
+  }, "Edit payment"), __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Button"], {
+    onClick: function onClick() {
+      return next_router__WEBPACK_IMPORTED_MODULE_5___default.a.back();
+    },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 128
+      lineNumber: 195
     },
     __self: this
-  }));
+  }, "Cancel")));
 };
 
-Payment.getInitialProps = function _callee() {
-  var resCareer, resCountry, resCities, resPaymentTypes, careers, cities, countries, paymentTypes;
-  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function _callee$(_context) {
+EditPayment.getInitialProps = function _callee(_ref) {
+  var query, id, careers, countries, cities, paymentTypes, payment, student, duesOptions;
+  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function _callee$(_context2) {
     while (1) {
-      switch (_context.prev = _context.next) {
+      switch (_context2.prev = _context2.next) {
         case 0:
-          _context.next = 2;
-          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_7___default.a.get("http://0.0.0.0:8000/api/students/careers/"));
+          query = _ref.query;
+          id = query.id;
+          _context2.next = 4;
+          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(Object(_lib_Api__WEBPACK_IMPORTED_MODULE_6__["careersApi"])());
 
-        case 2:
-          resCareer = _context.sent;
-          _context.next = 5;
-          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_7___default.a.get("http://0.0.0.0:8000/api/students/countries/"));
+        case 4:
+          careers = _context2.sent;
+          _context2.next = 7;
+          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(Object(_lib_Api__WEBPACK_IMPORTED_MODULE_6__["countriesApi"])());
 
-        case 5:
-          resCountry = _context.sent;
-          _context.next = 8;
-          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_7___default.a.get("http://0.0.0.0:8000/api/students/cities/"));
+        case 7:
+          countries = _context2.sent;
+          _context2.next = 10;
+          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(Object(_lib_Api__WEBPACK_IMPORTED_MODULE_6__["citiesApi"])());
 
-        case 8:
-          resCities = _context.sent;
-          _context.next = 11;
-          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_7___default.a.get("http://0.0.0.0:8000/api/payments/types"));
+        case 10:
+          cities = _context2.sent;
+          _context2.next = 13;
+          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(Object(_lib_Api__WEBPACK_IMPORTED_MODULE_6__["paymentsTypesApi"])());
 
-        case 11:
-          resPaymentTypes = _context.sent;
-          _context.next = 14;
-          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(resCareer.data);
+        case 13:
+          paymentTypes = _context2.sent;
+          _context2.next = 16;
+          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(Object(_lib_Api__WEBPACK_IMPORTED_MODULE_6__["paymentIdApi"])(id));
 
-        case 14:
-          careers = _context.sent;
-          _context.next = 17;
-          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(resCities.data);
+        case 16:
+          payment = _context2.sent;
+          _context2.next = 19;
+          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(Object(_lib_Api__WEBPACK_IMPORTED_MODULE_6__["studentIdApi"])(payment.student));
 
-        case 17:
-          cities = _context.sent;
-          _context.next = 20;
-          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(resCountry.data);
+        case 19:
+          student = _context2.sent;
+          _context2.next = 22;
+          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(Object(_lib_Api__WEBPACK_IMPORTED_MODULE_6__["paymentsDuesApi"])());
 
-        case 20:
-          countries = _context.sent;
-          _context.next = 23;
-          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(resPaymentTypes.data);
-
-        case 23:
-          paymentTypes = _context.sent;
-          return _context.abrupt("return", {
+        case 22:
+          duesOptions = _context2.sent;
+          return _context2.abrupt("return", {
             careers: careers,
             countries: countries,
             cities: cities,
-            paymentTypes: paymentTypes
+            paymentTypes: paymentTypes,
+            id: id,
+            payment: payment,
+            student: student,
+            duesOptions: duesOptions
           });
 
-        case 25:
+        case 24:
         case "end":
-          return _context.stop();
+          return _context2.stop();
       }
     }
   });
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Payment);
+/* harmony default export */ __webpack_exports__["default"] = (EditPayment);
 
 /***/ }),
 
-/***/ 4:
+/***/ 1:
 /*!***************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fpayment%2F%5Bid%5D&absolutePagePath=%2Fhome%2Fadmin%2FDesktop%2Facamica%2Fclient%2Fpages%2Fpayment%2F%5Bid%5D.js ***!
   \***************************************************************************************************************************************************************/
@@ -30411,5 +30623,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[4,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=[id].js.map

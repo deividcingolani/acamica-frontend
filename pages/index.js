@@ -3,10 +3,9 @@ import { Layout } from "../components/Layout";
 import { Button } from "react-bootstrap";
 import { isLoggedIn } from "../lib/isLoggedIn";
 import Auth from "../lib/Auth";
-
 const Home = () => {
   const auth = new Auth();
-
+ 
   return (
     <div>
       <Layout />
@@ -17,11 +16,8 @@ const Home = () => {
 
       {!isLoggedIn() && (
         <>
-          <p>
-            If you want entry in this application
-          </p>
+          <p>If you want entry in this application</p>
           <Button onClick={() => auth.login()}>Login</Button>
-
         </>
       )}
 

@@ -4,34 +4,35 @@ export const PaymentsFilter = props => {
   
   const { handleSubmit, register } = useForm();
   const onSubmit = values => {
-    let studentsFilter = props.students;
+    let paymentsFilter = props.payments;
   
     /* Filter by name */
     if (values.name.trim() !== "") {
-      studentsFilter = studentsFilter.filter(student =>
-        student.name.toLowerCase().includes(values.name.toLowerCase())
+      paymentsFilter = paymentsFilter.filter(payment =>
+        payment.name.toLowerCase().includes(values.name.toLowerCase())
       );
     }
 
     if (values.email.trim() !== "") {
-      studentsFilter = studentsFilter.filter(student =>
-        student.email.toLowerCase().includes(values.email.toLowerCase())
+      paymentsFilter = paymentsFilter.filter(payment =>
+        payment.email.toLowerCase().includes(values.email.toLowerCase())
       );
     }
 
     if (values.country.trim() !== "" && values.country.trim() !== "All") {
-      studentsFilter = studentsFilter.filter(
-        student => student.country == values.country
+      paymentsFilter = paymentsFilter.filter(
+        payment => payment.country == values.country
       );
     }
 
     if (values.career.trim() !== "" && values.career.trim() !== "All") {
-      studentsFilter = studentsFilter.filter(
-        student => student.career == values.career
+      paymentsFilter = paymentsFilter.filter(
+        payment => payment.career == values.career
       );
     }
 
-    props.setstudents(studentsFilter);
+    props.setPayments(paymentsFilter);
+    props.setpageActual(1)
   };
 
   return (

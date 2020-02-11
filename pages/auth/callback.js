@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Auth from "../../lib/Auth";
 import Router from "next/router";
 import {Layout} from "../../components/Layout";
-
 const auth = new Auth();
 
 export default class Callback extends Component {
@@ -10,7 +9,7 @@ export default class Callback extends Component {
     var user_details = auth.extractInfoFromHash();
     auth.handleAuthentication().then(res => {
       if (!res) {
-        window.location.replace("/");
+        Router.replace('/')
       } else {
         Router.push("/payments");
       }

@@ -2,23 +2,17 @@ import { Layout } from "../../components/Layout";
 import { useForm } from "react-hook-form";
 import { Button } from "react-bootstrap";
 import Router from "next/router";
+import Link from "next/link";
 import {
-  careersApi,
-  countriesApi,
-  citiesApi,
   paymentsTypesApi,
-  paymentIdApi,
-  studentIdApi,
   paymentsDuesApi,
-  uploadPaymentApi,
+  createPaymentApi,
   studentsApi
 } from "../../lib/Api";
-import { useState } from "react";
 
-const EditPayment = props => {
+const CreatePayment = props => {
   const { handleSubmit, register } = useForm();
-  const { paymentTypes, idPayment, payment, students, duesOptions } = props;
-
+  const { paymentTypes, duesOptions, students } = props;
   const onSubmit = async values => {
     try {
       const paymentEdited = {
@@ -26,19 +20,20 @@ const EditPayment = props => {
         dues: values.dues,
         student: values.student
       };
-      await uploadPaymentApi(paymentEdited, idPayment);
+      console.log(paymentEdited);
+      await createPaymentApi(paymentEdited);
 
       Router.push("/payments");
     } catch (error) {
-      alert("there is an error with the upload");
+      alert("there is an error with creation of Payment");
       event.preventDefault();
     }
   };
 
   return (
-    <Layout title={`Payment Nro  ${idPayment}`} requireLogin={true}>
+    <Layout title="Create new Payment" requireLogin={true}>
       <div className="container">
-        <form onSubmit={handleSubmit(onSubmit)} className=" formFilter">
+        <form onSubmit={handleSubmit(onSubmit)} className="formFilter">
           <div className="inputs">
             <div className="form-group  col-md-6">
               <label htmlFor="student">Student</label>
@@ -57,12 +52,11 @@ const EditPayment = props => {
             </div>
 
             <div className="form-group col-md-6">
-              <label htmlFor="country">Payment Type</label>
+              <label htmlFor="paymentType">Payment Type</label>
               <select
                 className="form-control"
                 name="paymentType"
                 multiple={false}
-                defaultValue={payment.payment_type}
                 ref={register}
               >
                 {paymentTypes.map(payment => (
@@ -79,7 +73,6 @@ const EditPayment = props => {
                 name="dues"
                 multiple={false}
                 ref={register}
-                defaultValue={payment.dues}
               >
                 {duesOptions.sort().map(dueOption => (
                   <option value={dueOption.id} key={dueOption.id}>
@@ -99,10 +92,10 @@ const EditPayment = props => {
             </Button>
             <Button
               type="submit"
-              variant="success"
               className="col-md-3 edit-button"
+              variant="success"
             >
-              Edit payment
+              Create
             </Button>
           </div>
         </form>
@@ -111,27 +104,15 @@ const EditPayment = props => {
   );
 };
 
-EditPayment.getInitialProps = async function({ query }) {
-  const { id } = query;
-  const careers = await careersApi();
-  const countries = await countriesApi();
-  const cities = await citiesApi();
+CreatePayment.getInitialProps = async function() {
   const paymentTypes = await paymentsTypesApi();
-  const payment = await paymentIdApi(id);
-  const student = await studentIdApi(payment.student);
-  const students = await studentsApi();
   const duesOptions = await paymentsDuesApi();
+  const students = await studentsApi();
   return {
-    careers,
-    countries,
-    cities,
     paymentTypes,
-    idPayment: id,
-    payment,
-    student,
     duesOptions,
     students
   };
 };
 
-export default EditPayment;
+export default CreatePayment;

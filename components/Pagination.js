@@ -16,7 +16,11 @@ export const PaginationTable = ({
 
   for (let number = 1; number <= numberPages; number++) {
     items.push(
-      <Pagination.Item key={number} active={number === pageActual}>
+      <Pagination.Item
+        key={number}
+        onClick={() => setpageActual(number)}
+        active={number === pageActual}
+      >
         {number}
       </Pagination.Item>
     );

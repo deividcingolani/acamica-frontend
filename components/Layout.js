@@ -2,14 +2,13 @@ import Link from "next/link";
 import Head from "next/head";
 import Auth from "../lib/Auth";
 import { isLoggedIn } from "../lib/isLoggedIn";
-import Router from "next/router";
 import Error from "next/error";
 
 export function Layout({ title, children, requireLogin }) {
   const auth = new Auth();
   const isLogged = isLoggedIn();
   return (
-    <React.Fragment>
+    <React.Fragment >
       {requireLogin && !isLogged ? (
         <Error statusCode={401} />
       ) : (
@@ -17,8 +16,8 @@ export function Layout({ title, children, requireLogin }) {
           <Head>
             <title>Acamica Students</title>
           </Head>
-          <header>
-
+          
+          <header className="headerApp">
             <Link href="/">
               <a>Home</a>
             </Link>
@@ -27,6 +26,12 @@ export function Layout({ title, children, requireLogin }) {
                 <a>Payments Information</a>
               </Link>
             )}
+            {isLogged && (
+              <Link href="/students">
+                <a>Students</a>
+              </Link>
+            )}
+
             {isLogged && (
               <li className="list">
                 <a className="logout" onClick={() => auth.logout()}>

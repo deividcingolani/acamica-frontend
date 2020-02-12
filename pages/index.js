@@ -5,21 +5,20 @@ import { isLoggedIn } from "../lib/isLoggedIn";
 import Auth from "../lib/Auth";
 const Home = () => {
   const auth = new Auth();
- 
+
   return (
     <div>
-      <Layout />
-      <p>
-        This is an application for Students of Acamica Where you view and load
-        the payments of students.
-      </p>
-
-      {!isLoggedIn() && (
+      <Layout>
+        <p>
+          This is an application for Students of Acamica 
+        </p>
+        {!isLoggedIn() && (
         <>
-          <p>If you want entry in this application</p>
-          <Button onClick={() => auth.login()}>Login</Button>
+          <Button onClick={() => auth.login()}>Login/Register</Button>
         </>
       )}
+
+      </Layout>
 
       <style jsx>{`
         .hero {

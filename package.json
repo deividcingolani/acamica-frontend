@@ -4,7 +4,9 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "jest",
+    "testwatch": "jest --watchAll"
   },
   "license": "ISC",
   "dependencies": {
@@ -23,6 +25,13 @@
     "react-dom": "^16.12.0",
     "react-hook-form": "^4.9.2",
     "react-hook-form-input": "^1.1.10",
-    "react-notify-toast": "^0.5.1"
+    "react-notify-toast": "^0.5.1",
+    "@babel/core": "^7.4.0",
+    "babel-jest": "^24.5.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.11.2",
+    "jest": "^24.5.0",
+    "react-addons-test-utils": "^15.6.2",
+    "react-test-renderer": "^16.8.4"
   }
 }

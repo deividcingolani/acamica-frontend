@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`With Snapshot Testing App shows "Hello, Sunshine!" 1`] = `
+<div
+  className="jsx-3170664004"
+>
+  <div
+    className="jsx-473655496 root"
+  >
+    <header
+      className="jsx-473655496 headerApp"
+    >
+      <a
+        className="jsx-473655496"
+        href="/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Home
+      </a>
+      <li
+        className="jsx-473655496 list"
+      >
+        <a
+          className="jsx-473655496 login"
+          onClick={[Function]}
+        >
+          Login / Register
+        </a>
+      </li>
+    </header>
+    <h1
+      className="jsx-473655496"
+    />
+    <p
+      className="jsx-3170664004"
+    >
+      This is an application for Students of Acamica
+    </p>
+    <button
+      className="btn btn-primary"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      Login/Register
+    </button>
+    <footer
+      className="jsx-473655496"
+    >
+      Acamica © 
+      2020
+    </footer>
+  </div>
+</div>
+`;

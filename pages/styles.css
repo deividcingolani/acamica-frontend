@@ -1,0 +1,36 @@
+.button-new-student {
+  margin-top: 2em !important;
+  margin-bottom: 2em !important;
+}
+
+.button-new-payment {
+  margin-bottom: 1em !important;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+
+.buttons,
+.edit-button {
+  margin-left: 2em;
+}
+
+.container {
+  margin-bottom: 1em;
+}
+
+.headerApp {
+  margin-bottom: 1em;
+}
+
+.button-filter {
+  margin-top: 1em;
+}

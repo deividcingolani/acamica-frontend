@@ -17,7 +17,11 @@
       "static/runtime/polyfills.js",
       "static/runtime/polyfills.js.map"
     ],
-    "/payment/[id]": [
+    "/payments": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/students/[id]": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]

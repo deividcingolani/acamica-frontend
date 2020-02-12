@@ -5,6 +5,7 @@ import { isLoggedIn } from "../lib/isLoggedIn";
 import Auth from "../lib/Auth";
 
 const Home = () => {
+
   const auth = new Auth();
 
   return (

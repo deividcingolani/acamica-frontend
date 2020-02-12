@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -2818,7 +2818,7 @@ __webpack_require__.r(__webpack_exports__);
 const AUTH_CONFIG = {
   domain: 'dev-acamica2.auth0.com',
   clientId: 'v1DwgMtY6lgeBJ9qglyAT1wANZJjX0gO',
-  callbackUrl: 'https://dev-acamica2.auth0.com/auth/callback'
+  callbackUrl: 'https://acamica-frontend.now.sh/'
 };
 
 /***/ }),
@@ -2885,7 +2885,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!***********************************!*\
   !*** multi ./src/pages/_error.js ***!
   \***********************************/

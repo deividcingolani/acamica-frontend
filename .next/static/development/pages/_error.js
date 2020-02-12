@@ -12192,7 +12192,7 @@ __webpack_require__.r(__webpack_exports__);
 var AUTH_CONFIG = {
   domain: 'dev-acamica2.auth0.com',
   clientId: 'v1DwgMtY6lgeBJ9qglyAT1wANZJjX0gO',
-  callbackUrl: 'https://dev-acamica2.auth0.com/auth/callback'
+  callbackUrl: 'https://acamica-frontend.now.sh/'
 };
 
 /***/ }),
@@ -12260,7 +12260,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 /***/ }),
 
-/***/ 2:
+/***/ 1:
 /*!*********************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F_error&absolutePagePath=%2Fhome%2Fadmin%2FDesktop%2Facamica%2Fclient%2Fsrc%2Fpages%2F_error.js ***!
   \*********************************************************************************************************************************************/
@@ -12283,5 +12283,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=_error.js.map

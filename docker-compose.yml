@@ -9,3 +9,6 @@ services:
       - .:/app
     ports:
       - "3000:3000"
+    environment:
+       url-auth0: http://localhost:3000/auth/callback'
+

@@ -9942,7 +9942,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/app/src/pages/_app.js";
+var _jsxFileName = "/home/admin/Desktop/acamica/client/src/pages/_app.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 
 
@@ -10079,7 +10079,7 @@ if (true) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! next-client-pages-loader?page=%2F_app&absolutePagePath=private-next-pages%2F_app.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F_app&absolutePagePath=private-next-pages%2F_app.js!./");
-module.exports = __webpack_require__(/*! /app/node_modules/next/dist/client/router.js */"./node_modules/next/dist/client/router.js");
+module.exports = __webpack_require__(/*! /home/admin/Desktop/acamica/client/node_modules/next/dist/client/router.js */"./node_modules/next/dist/client/router.js");
 
 
 /***/ }),

@@ -3,7 +3,6 @@ import { Layout } from "../components/Layout";
 import { Button } from "react-bootstrap";
 import { isLoggedIn } from "../lib/isLoggedIn";
 import Auth from "../lib/Auth";
-import logoImage from "../public/acamica.jpg";
 
 const Home = () => {
   const auth = new Auth();
@@ -14,15 +13,17 @@ const Home = () => {
         <h1>Acamica Students</h1>
         <h3>The best place for learn IT</h3>
 
-        {!isLoggedIn() &&
+        {!isLoggedIn() && (
           <>
-            <Button data-test="button-login" className="loginHome col-md-2" onClick={() => auth.login()}>
+            <Button
+              data-test="button-login"
+              className="loginHome col-md-2"
+              onClick={() => auth.login()}
+            >
               Login/Register
             </Button>
           </>
-        }
-          <img src={logoImage} alt="logo" id="logoImage" className="logo" />
-
+        )}
       </Layout>
 
       <style jsx>{`

@@ -2,7 +2,7 @@ import React from "react";
 import EnzymeAdapter from 'enzyme-adapter-react-16';
 import Enzyme, { shallow } from 'enzyme';
 
-import App from "../pages/index.js";
+import App from "../src/pages/index.js";
 
 Enzyme.configure({ adapter: new EnzymeAdapter() });
 

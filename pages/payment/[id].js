@@ -3,17 +3,12 @@ import { useForm } from "react-hook-form";
 import { Button } from "react-bootstrap";
 import Router from "next/router";
 import {
-  careersApi,
-  countriesApi,
-  citiesApi,
   paymentsTypesApi,
   paymentIdApi,
-  studentIdApi,
   paymentsDuesApi,
   uploadPaymentApi,
   studentsApi
 } from "../../lib/Api";
-import { useState } from "react";
 
 const EditPayment = props => {
   const { handleSubmit, register } = useForm();
@@ -113,22 +108,14 @@ const EditPayment = props => {
 
 EditPayment.getInitialProps = async function({ query }) {
   const { id } = query;
-  const careers = await careersApi();
-  const countries = await countriesApi();
-  const cities = await citiesApi();
   const paymentTypes = await paymentsTypesApi();
   const payment = await paymentIdApi(id);
-  const student = await studentIdApi(payment.student);
   const students = await studentsApi();
   const duesOptions = await paymentsDuesApi();
   return {
-    careers,
-    countries,
-    cities,
     paymentTypes,
     idPayment: id,
     payment,
-    student,
     duesOptions,
     students
   };

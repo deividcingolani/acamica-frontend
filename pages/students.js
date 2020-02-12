@@ -38,7 +38,7 @@ const Students = props => {
 
   return (
     <React.Fragment>
-      <Layout title="Students" requireLogin={true}>
+      <Layout data-test="students" title="Students" requireLogin={true}>
         <Link href="/students/new">
           <Button
             className="col-sm-2 col-lg-3 button-new-student"

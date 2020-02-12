@@ -2,7 +2,6 @@ import { Layout } from "../../components/Layout";
 import { useForm } from "react-hook-form";
 import { Button } from "react-bootstrap";
 import Router from "next/router";
-import Link from "next/link";
 import {
   paymentsTypesApi,
   paymentsDuesApi,
@@ -20,7 +19,6 @@ const CreatePayment = props => {
         dues: values.dues,
         student: values.student
       };
-      console.log(paymentEdited);
       await createPaymentApi(paymentEdited);
 
       Router.push("/payments");

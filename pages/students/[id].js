@@ -14,7 +14,6 @@ import {
 const newStudent = props => {
   const { handleSubmit, register } = useForm();
   const { countries, careers, cities, student } = props;
-  console.log(student);
   const onSubmit = async values => {
     try {
       const studentEdited = {

@@ -3,20 +3,24 @@ import { Layout } from "../components/Layout";
 import { Button } from "react-bootstrap";
 import { isLoggedIn } from "../lib/isLoggedIn";
 import Auth from "../lib/Auth";
+import logoImage from "../static/acamica.jpg";
 const Home = () => {
   const auth = new Auth();
 
   return (
-    <div>
-      <Layout>
-        <p>
-          This is an application for Students of Acamica 
-        </p>
-        {!isLoggedIn() && (
-        <>
-          <Button onClick={() => auth.login()}>Login/Register</Button>
-        </>
-      )}
+    <div data-test="index">
+      <Layout data-test="layout">
+        <h1>Acamica Students</h1>
+        <h3>The best place for learn IT</h3>
+
+        {!isLoggedIn() &&
+          <>
+            <Button data-test="button-login" className="loginHome col-md-2" onClick={() => auth.login()}>
+              Login/Register
+            </Button>
+          </>
+        }
+          <img src={logoImage} alt="logo" id="logoImage" className="logo" />
 
       </Layout>
 

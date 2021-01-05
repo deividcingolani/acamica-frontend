@@ -15,7 +15,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "@fortawesome/react-fontawesome": "^0.1.8",
     "auth0-js": "^9.12.2",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "babel-jest": "^25.1.0",
     "bootstrap": "^4.4.1",
     "enzyme": "^3.9.0",
